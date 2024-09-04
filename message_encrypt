@@ -1,0 +1,9 @@
+#!/bin/bash
+read -rp "Enter Message: " MESSAGE
+echo
+read -rsp "Enter passphrase: " PASSPHRASE
+echo
+
+echo "$MESSAGE" | openssl enc -chacha20 -e -a --pbkdf2 -k "$PASSPHRASE"
+
+echo
